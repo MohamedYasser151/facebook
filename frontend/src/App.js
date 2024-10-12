@@ -14,6 +14,7 @@ const Login = () => {
 
     return (
       <div className="login-container">
+        <small style={{fontSize:"13px",marginTop:"15px"}}>English (UK)</small>
       <img src={img}/>
       <form onSubmit={handleLogin} className='form'>
           
