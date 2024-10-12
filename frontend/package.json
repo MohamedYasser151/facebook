@@ -1,17 +1,43 @@
 {
+  "homepage": "https://MohamedYasser151.github.io/",
   "name": "facebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.13",
+    "@popperjs/core": "^2.11.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "aos": "^2.3.4",
+    "arabic-normalization": "^0.1.0",
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.2",
+    "gsap": "^3.12.5",
+    "howler": "^2.2.4",
+    "js-cookie": "^3.0.5",
+    "lazy": "^1.0.11",
+    "mdb-react-ui-kit": "^7.1.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.0",
+    "react-dom": "^18.2.0",
+    "react-flip-toolkit": "^7.1.0",
+    "react-notifications": "^1.7.4",
+    "react-pdf": "^7.7.1",
+    "react-pdf-js": "^5.1.0",
+    "react-player": "^2.15.1",
+    "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.4",
+    "stemmer": "^2.0.1",
+    "swiper": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -34,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
