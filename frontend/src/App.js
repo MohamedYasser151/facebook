@@ -24,7 +24,7 @@ const Login = () => {
               <input
                   type="email"
                   id="email"
-                  placeholder="Email address or phone number"
+                  placeholder="Mobile number or email address"
 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -44,11 +44,14 @@ const Login = () => {
           </div>
           <button type="submit">Log in</button>
           <small>Forgotten password?</small>
+          <div className='all'>
           <div className='btn'>Create new account</div>
           <div className='meta'>
             <img src={img1}/>
             <h5>Meta</h5>
           </div>
+          </div>
+         
       </form>
   </div>
     );

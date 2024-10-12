@@ -40,6 +40,13 @@ input {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
+  outline: none;
+}
+input:hover {
+  border: 1px solid #0000008d;
+}
+input::placeholder {
+  font-size: 16px;
 }
 
 button {
@@ -62,15 +69,21 @@ small{
   font-size: small;
   font-size: 15px;
 }
+.all{
+  width: 90%;
+  position: fixed;
+  bottom: 0;
+}
 .btn{
-  width: 100%;
+  /* width: 100%; */
   padding: 13px;
   border: 1px solid #1877f2;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 220px;
+  /* margin-top: 220px; */
+ 
   font-size: 15px;
   color: #0a4088;
   cursor: pointer;
