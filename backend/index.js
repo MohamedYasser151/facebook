@@ -41,34 +41,22 @@ app.get('/',(re,res)=> {
     return res.json("From BAckend Side");
 });
 
-
-// signup
 app.post('/signup', (req, res) => {
-  
-  const checkUserSql = "SELECT * FROM signup WHERE username = ?"; 
-  
-  db.query(checkUserSql, [req.body.username], (err, result) => {
-    if (err) {
+  console.log(req.body); // This will log the incoming request body
+
+  const password = req.body.password; 
+
+  const insertSql = "INSERT INTO signup (`username`, `password`) VALUES (?, ?)";
+  const values = [req.body.username, password];
+
+  db.query(insertSql, values, (insertErr, result) => {
+    if (insertErr) {
       return res.json({ Message: "Error in Node" });
     }
-
-    if (result.length > 0) {
-      return res.json({ Message: "User already exists" });
-    } else {
-      const password = req.body.password; 
-
-      const insertSql = "INSERT INTO signup (`username`, `password`) VALUES (?, ?)";
-      const values = [req.body.username, password];
-
-      db.query(insertSql, values, (insertErr, result) => {
-        if (insertErr) {
-          return res.json({ Message: "Error in Node" });
-        }
-        return res.json({ Message: "User created successfully", result });
-      });
-    }
+    return res.json({ Message: "User created successfully", result });
   });
 });
+
 
 
 
