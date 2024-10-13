@@ -20,7 +20,7 @@ const Login = () => {
      
       const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('facebookk-6pr1.vercel.app/signup', formData)
+        axios.post('https://facebookk-6pr1.vercel.app/signup', formData)
           .then((res) => {
             console.log(res.data);
             

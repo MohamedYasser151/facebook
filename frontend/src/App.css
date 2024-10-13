@@ -102,3 +102,13 @@ small{
   margin-top: 15px;
   margin-right: 5px;
 }
+
+
+@media (max-height:588px){
+ 
+  .all{
+    width: 90%;
+    position: fixed;
+    bottom: -100px;
+  }
+}
